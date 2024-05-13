@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace GestorDeAlunoT6
 {
@@ -34,12 +36,21 @@ namespace GestorDeAlunoT6
 
         private void ButtonCancelar_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonLogin_Click(object sender, EventArgs e)
+        {
+            MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
+
+            MySqlDataAdapter meuAdaptadorSql = new MySqlDataAdapter();
+            DataTable minhaTabela = new DataTable();
+            MySqlCommand meuComandoSql = new MySqlCommand("", meuBancoDeDados.getConexao);
         }
     }
 }

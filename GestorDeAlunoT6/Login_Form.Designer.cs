@@ -50,6 +50,7 @@
             this.ButtonLogin.TabIndex = 0;
             this.ButtonLogin.Text = "Login";
             this.ButtonLogin.UseVisualStyleBackColor = false;
+            this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
             // ButtonCancelar
             // 
