@@ -70,6 +70,7 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(202, 20);
             this.textBoxSenha.TabIndex = 4;
+            this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // textBoxUsuario
             // 
@@ -135,6 +136,7 @@
             this.Controls.Add(this.ButtonCancelar);
             this.Controls.Add(this.ButtonLogin);
             this.Name = "Login_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).EndInit();

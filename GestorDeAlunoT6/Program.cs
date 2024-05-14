@@ -16,7 +16,17 @@ namespace GestorDeAlunoT6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            //Application.Run(new Login_Form());
+
+            Login_Form login_Form = new Login_Form();
+            if(login_Form.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormMenuPrincipal());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
