@@ -1,9 +1,9 @@
-﻿using GestorDeAlunoT6;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,12 +13,9 @@ namespace GestorDeEstudanteT6
     {
        MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
-            public bool inserirEstudante(string nome, string sobrenome,
-                DateTime nascimento, string telefone, string genero,
-                string endereco, MemoryStream foto)
+            public bool inserirEstudante(string nome, string sobrenome, DateTime nascimento, string telefone, string genero, string endereco, MemoryStream foto)
             {
-                MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereço`, `foto`) VALUES (@nome,@sobrenome,@nascimento,@genero,@telefone,@endereço,@foto)", 
-                    meuBancoDeDados.getConexao);
+                MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`nome`, `sobrenome`, `nascimento`, `genero`, `telefone`, `endereço`, `foto`) VALUES (@nome,@sobrenome,@nascimento,@genero,@telefone,@endereço,@foto)", meuBancoDeDados.getConexao);
 
                 comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
                 comando.Parameters.Add("@sobrenome", MySqlDbType.VarChar).Value= sobrenome;
@@ -26,7 +23,19 @@ namespace GestorDeEstudanteT6
                 comando.Parameters.Add("@genero", MySqlDbType.VarChar).Value = genero;
                 comando.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
                 comando.Parameters.Add("@endereço", MySqlDbType.Text).Value = endereco;
-                comando.Parameters.Add("@foto", MySqlDbType.LongBlob).Value = foto;
+                comando.Parameters.Add("@foto", MySqlDbType.LongBlob).Value = foto.ToArray();
+
+                 meuBancoDeDados.abrirConexao();
+
+                if (comando.ExecuteNonQuery()==1)
+                {
+                meuBancoDeDados.fecharConexao();
+                return true;
+                }
+                else
+                {
+                return false;
+                }
              
             }
         }
