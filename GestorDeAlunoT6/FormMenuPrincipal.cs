@@ -16,5 +16,11 @@ namespace GestorDeAlunoT6
         {
             InitializeComponent();
         }
+
+        private void listarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListaDeEstudantes formListaDeEstudantes = new FormListaDeEstudantes();
+            listaDeEstudantes.Show();
+        }
     }
 }
