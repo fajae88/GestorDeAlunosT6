@@ -35,27 +35,31 @@
             // 
             // dataGridViewListaDeEstudantes
             // 
+            this.dataGridViewListaDeEstudantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListaDeEstudantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaDeEstudantes.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListaDeEstudantes.Name = "dataGridViewListaDeEstudantes";
-            this.dataGridViewListaDeEstudantes.Size = new System.Drawing.Size(776, 346);
+            this.dataGridViewListaDeEstudantes.Size = new System.Drawing.Size(685, 346);
             this.dataGridViewListaDeEstudantes.TabIndex = 0;
+            this.dataGridViewListaDeEstudantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaDeEstudantes_CellContentClick);
+            this.dataGridViewListaDeEstudantes.DoubleClick += new System.EventHandler(this.dataGridViewListaDeEstudantes_DoubleClick);
             // 
             // buttonAtualizar
             // 
             this.buttonAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtualizar.Location = new System.Drawing.Point(264, 384);
+            this.buttonAtualizar.Location = new System.Drawing.Point(205, 383);
             this.buttonAtualizar.Name = "buttonAtualizar";
             this.buttonAtualizar.Size = new System.Drawing.Size(291, 43);
             this.buttonAtualizar.TabIndex = 1;
             this.buttonAtualizar.Text = "Atualizar";
             this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // FormListaDeEstudantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(709, 450);
             this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.dataGridViewListaDeEstudantes);
             this.Name = "FormListaDeEstudantes";

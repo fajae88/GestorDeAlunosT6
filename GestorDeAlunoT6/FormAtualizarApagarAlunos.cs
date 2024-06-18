@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace GestorDeAlunoT6
 {
-    public partial class FormMenuPrincipal : Form
+    public partial class FormAtualizarApagarAlunos : Form
     {
-        public FormMenuPrincipal()
+        public FormAtualizarApagarAlunos()
         {
             InitializeComponent();
         }
 
-        private void listarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FormAtualizarApagarAlunos_Load(object sender, EventArgs e)
         {
-            FormListaDeEstudantes formListaDeEstudantes = new FormListaDeEstudantes();
-            formListaDeEstudantes.Show();
+
         }
     }
 }

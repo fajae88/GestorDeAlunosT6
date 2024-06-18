@@ -85,7 +85,7 @@ namespace GestorDeAlunoT6
 
             string nome = textBoxNome.Text;
             string sobrenome = textBoxSobrenome.Text;
-            DateTime nascimento = dateTimeNascimento;
+            DateTime nascimento = dateTimeNascimento.Value;
         }
 
         private void textBoxNome_TextChanged(object sender, EventArgs e)

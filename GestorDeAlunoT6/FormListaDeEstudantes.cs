@@ -30,6 +30,24 @@ namespace GestorDeAlunoT6
             dataGridViewListaDeEstudantes.RowTemplate.Height = 80;
             dataGridViewListaDeEstudantes.DataSource = estudante.getEstudantes(comando);
             colunaDeFotos = (DataGridViewImageColumn) dataGridViewListaDeEstudantes.Columns[7];
+            colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewListaDeEstudantes.AllowUserToAddRows = false;  
+
+        }
+
+        private void dataGridViewListaDeEstudantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewListaDeEstudantes_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
