@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorDeEstudanteT6;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,20 @@ namespace GestorDeAlunoT6
         private void FormAtualizarApagarAlunos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+            Estudante estudante = new Estudante();
+
+            string nome = textBoxNome.Text;
+            string sobrenome = textBoxSobrenome.Text;
+            DateTime nascimento = dateTimeNascimento.Value;
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

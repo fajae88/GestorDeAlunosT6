@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarApagarAlunos));
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonApagar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAtualizar = new System.Windows.Forms.Button();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.textBoxEndereço = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,16 +54,17 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // buttonApagar
             // 
-            this.button3.BackColor = System.Drawing.Color.LightCyan;
-            this.button3.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(186, 407);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 27);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Apagar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonApagar.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonApagar.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.buttonApagar.Location = new System.Drawing.Point(186, 407);
+            this.buttonApagar.Name = "buttonApagar";
+            this.buttonApagar.Size = new System.Drawing.Size(83, 27);
+            this.buttonApagar.TabIndex = 33;
+            this.buttonApagar.Text = "Apagar";
+            this.buttonApagar.UseVisualStyleBackColor = false;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // button2
             // 
@@ -76,16 +77,17 @@
             this.button2.Text = "Enviar Foto";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonAtualizar
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCyan;
-            this.button1.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button1.Location = new System.Drawing.Point(21, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 27);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAtualizar.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonAtualizar.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.buttonAtualizar.Location = new System.Drawing.Point(21, 407);
+            this.buttonAtualizar.Name = "buttonAtualizar";
+            this.buttonAtualizar.Size = new System.Drawing.Size(83, 27);
+            this.buttonAtualizar.TabIndex = 31;
+            this.buttonAtualizar.Text = "Atualizar";
+            this.buttonAtualizar.UseVisualStyleBackColor = false;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // pictureBoxFoto
             // 
@@ -264,9 +266,9 @@
             this.ClientSize = new System.Drawing.Size(285, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.textBoxEndereço);
             this.Controls.Add(this.label2);
@@ -293,9 +295,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonApagar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAtualizar;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.TextBox textBoxEndereço;
         private System.Windows.Forms.Label label2;
