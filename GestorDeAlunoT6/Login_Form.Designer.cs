@@ -70,6 +70,7 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(202, 20);
             this.textBoxSenha.TabIndex = 4;
+            this.textBoxSenha.Text = "123456";
             this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // textBoxUsuario
@@ -78,6 +79,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(202, 20);
             this.textBoxUsuario.TabIndex = 5;
+            this.textBoxUsuario.Text = "duda";
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // Acessar

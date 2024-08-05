@@ -76,6 +76,7 @@
             this.button2.TabIndex = 32;
             this.button2.Text = "Enviar Foto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonAtualizar
             // 
@@ -258,6 +259,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 20);
             this.textBox1.TabIndex = 34;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FormAtualizarApagarAlunos
             // 

@@ -25,16 +25,29 @@ namespace GestorDeAlunoT6
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-            Estudante estudante = new Estudante();
-
-            string nome = textBoxNome.Text;
-            string sobrenome = textBoxSobrenome.Text;
-            DateTime nascimento = dateTimeNascimento.Value;
+           
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            Close();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog selecionarImagem = new OpenFileDialog();
+
+            selecionarImagem.Filter = "Selecione a foto (*.jpg,*.png,*.gif)|*.jpg;*.png;*.gif";
+
+            if (selecionarImagem.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxFoto.Image = Image.FromFile(selecionarImagem.FileName);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

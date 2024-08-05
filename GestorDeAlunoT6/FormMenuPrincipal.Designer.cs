@@ -71,6 +71,7 @@
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar Aluno";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
             // listarAlunosToolStripMenuItem
             // 
