@@ -37,12 +37,15 @@ namespace GestorDeAlunoT6
 
         private void dataGridViewListaDeEstudantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+         
         }
 
         private void dataGridViewListaDeEstudantes_DoubleClick(object sender, EventArgs e)
         {
+            FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
+            formAtualizarApagarAlunos.textBoxID.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
 
+            formAtualizarApagarAlunos.Show();
         }
 
         private void buttonAtualizar_Click(object sender, EventArgs e)

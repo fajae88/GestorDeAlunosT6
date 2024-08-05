@@ -28,5 +28,11 @@ namespace GestorDeAlunoT6
             FormInserirEstudante inserirEstudante = new FormInserirEstudante();
             inserirEstudante.Show();
         }
+
+        private void editarRemoverAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
+            formAtualizarApagarAlunos.Show();
+        }
     }
 }
