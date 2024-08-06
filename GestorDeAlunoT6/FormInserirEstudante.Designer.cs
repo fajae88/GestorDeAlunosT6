@@ -75,6 +75,7 @@
             this.dateTimeNascimento.Name = "dateTimeNascimento";
             this.dateTimeNascimento.Size = new System.Drawing.Size(143, 20);
             this.dateTimeNascimento.TabIndex = 3;
+            this.dateTimeNascimento.Value = new System.DateTime(2000, 2, 1, 0, 0, 0, 0);
             this.dateTimeNascimento.ValueChanged += new System.EventHandler(this.dateTimeNascimento_ValueChanged);
             // 
             // Nome
@@ -160,6 +161,7 @@
             // radioButtonFeminino
             // 
             this.radioButtonFeminino.AutoSize = true;
+            this.radioButtonFeminino.Checked = true;
             this.radioButtonFeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonFeminino.Location = new System.Drawing.Point(3, 9);
             this.radioButtonFeminino.Name = "radioButtonFeminino";
@@ -279,6 +281,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormInserirEstudante";
             this.Text = "FormInserirEstudante";
+            this.Load += new System.EventHandler(this.FormInserirEstudante_Load);
             this.groupBoxGenero.ResumeLayout(false);
             this.groupBoxGenero.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();

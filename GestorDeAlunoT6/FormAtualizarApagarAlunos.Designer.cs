@@ -38,9 +38,9 @@
             this.textBoxTelefone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonPrefiroNaoDizer = new System.Windows.Forms.RadioButton();
+            this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
+            this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.Genero = new System.Windows.Forms.Label();
             this.Nascimento = new System.Windows.Forms.Label();
             this.Sobrenome = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -137,50 +138,50 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButtonPrefiroNaoDizer);
+            this.groupBox1.Controls.Add(this.radioButtonMasculino);
+            this.groupBox1.Controls.Add(this.radioButtonFeminino);
             this.groupBox1.Location = new System.Drawing.Point(80, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(175, 81);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton3
+            // radioButtonPrefiroNaoDizer
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(3, 59);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(115, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Prefiro não dizer";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonPrefiroNaoDizer.AutoSize = true;
+            this.radioButtonPrefiroNaoDizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonPrefiroNaoDizer.Location = new System.Drawing.Point(3, 59);
+            this.radioButtonPrefiroNaoDizer.Name = "radioButtonPrefiroNaoDizer";
+            this.radioButtonPrefiroNaoDizer.Size = new System.Drawing.Size(115, 19);
+            this.radioButtonPrefiroNaoDizer.TabIndex = 2;
+            this.radioButtonPrefiroNaoDizer.TabStop = true;
+            this.radioButtonPrefiroNaoDizer.Text = "Prefiro não dizer";
+            this.radioButtonPrefiroNaoDizer.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonMasculino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(3, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(82, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Masculino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonMasculino.AutoSize = true;
+            this.radioButtonMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMasculino.Location = new System.Drawing.Point(3, 34);
+            this.radioButtonMasculino.Name = "radioButtonMasculino";
+            this.radioButtonMasculino.Size = new System.Drawing.Size(82, 19);
+            this.radioButtonMasculino.TabIndex = 1;
+            this.radioButtonMasculino.TabStop = true;
+            this.radioButtonMasculino.Text = "Masculino";
+            this.radioButtonMasculino.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonFeminino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(3, 9);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(77, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Feminino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonFeminino.AutoSize = true;
+            this.radioButtonFeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonFeminino.Location = new System.Drawing.Point(3, 9);
+            this.radioButtonFeminino.Name = "radioButtonFeminino";
+            this.radioButtonFeminino.Size = new System.Drawing.Size(77, 19);
+            this.radioButtonFeminino.TabIndex = 0;
+            this.radioButtonFeminino.TabStop = true;
+            this.radioButtonFeminino.Text = "Feminino";
+            this.radioButtonFeminino.UseVisualStyleBackColor = true;
             // 
             // Genero
             // 
@@ -257,15 +258,25 @@
             // 
             this.textBoxID.Location = new System.Drawing.Point(126, 12);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(143, 20);
+            this.textBoxID.Size = new System.Drawing.Size(82, 20);
             this.textBoxID.TabIndex = 34;
             this.textBoxID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(215, 11);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(54, 23);
+            this.buttonBuscar.TabIndex = 36;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
             // 
             // FormAtualizarApagarAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 450);
+            this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.buttonApagar);
@@ -300,23 +311,24 @@
         private System.Windows.Forms.Button buttonApagar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonAtualizar;
-        private System.Windows.Forms.PictureBox pictureBoxFoto;
-        private System.Windows.Forms.TextBox textBoxEndereço;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label Genero;
         private System.Windows.Forms.Label Nascimento;
         private System.Windows.Forms.Label Sobrenome;
         private System.Windows.Forms.Label Nome;
-        private System.Windows.Forms.DateTimePicker dateTimeNascimento;
-        private System.Windows.Forms.TextBox textBoxSobrenome;
-        private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Button buttonBuscar;
+        internal System.Windows.Forms.PictureBox pictureBoxFoto;
+        internal System.Windows.Forms.TextBox textBoxEndereço;
+        internal System.Windows.Forms.TextBox textBoxTelefone;
+        internal System.Windows.Forms.RadioButton radioButtonPrefiroNaoDizer;
+        internal System.Windows.Forms.RadioButton radioButtonMasculino;
+        internal System.Windows.Forms.RadioButton radioButtonFeminino;
+        internal System.Windows.Forms.DateTimePicker dateTimeNascimento;
+        internal System.Windows.Forms.TextBox textBoxSobrenome;
+        internal System.Windows.Forms.TextBox textBoxNome;
+        internal System.Windows.Forms.TextBox textBoxID;
     }
 }

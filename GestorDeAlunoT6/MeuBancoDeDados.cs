@@ -24,7 +24,7 @@ namespace GestorDeAlunoT6
         {
             if (conexao.State == ConnectionState.Closed)
             {
-                conexao.Close();
+                conexao.Open();
             }
         }
 
