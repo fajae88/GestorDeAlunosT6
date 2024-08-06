@@ -36,8 +36,8 @@
             this.Sobrenome = new System.Windows.Forms.Label();
             this.Nascimento = new System.Windows.Forms.Label();
             this.Genero = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupBoxGenero = new System.Windows.Forms.GroupBox();
+            this.radioButtonPrefiroNaoDizer = new System.Windows.Forms.RadioButton();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxGenero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,30 +119,30 @@
             this.Genero.TabIndex = 7;
             this.Genero.Text = "Gênero";
             // 
-            // groupBox1
+            // groupBoxGenero
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButtonMasculino);
-            this.groupBox1.Controls.Add(this.radioButtonFeminino);
-            this.groupBox1.Location = new System.Drawing.Point(74, 113);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(175, 81);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBoxGenero.Controls.Add(this.radioButtonPrefiroNaoDizer);
+            this.groupBoxGenero.Controls.Add(this.radioButtonMasculino);
+            this.groupBoxGenero.Controls.Add(this.radioButtonFeminino);
+            this.groupBoxGenero.Location = new System.Drawing.Point(74, 113);
+            this.groupBoxGenero.Name = "groupBoxGenero";
+            this.groupBoxGenero.Size = new System.Drawing.Size(175, 81);
+            this.groupBoxGenero.TabIndex = 8;
+            this.groupBoxGenero.TabStop = false;
+            this.groupBoxGenero.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // radioButton3
+            // radioButtonPrefiroNaoDizer
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(3, 59);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(115, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Prefiro não dizer";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButtonPrefiroNaoDizer.AutoSize = true;
+            this.radioButtonPrefiroNaoDizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonPrefiroNaoDizer.Location = new System.Drawing.Point(3, 59);
+            this.radioButtonPrefiroNaoDizer.Name = "radioButtonPrefiroNaoDizer";
+            this.radioButtonPrefiroNaoDizer.Size = new System.Drawing.Size(115, 19);
+            this.radioButtonPrefiroNaoDizer.TabIndex = 2;
+            this.radioButtonPrefiroNaoDizer.TabStop = true;
+            this.radioButtonPrefiroNaoDizer.Text = "Prefiro não dizer";
+            this.radioButtonPrefiroNaoDizer.UseVisualStyleBackColor = true;
+            this.radioButtonPrefiroNaoDizer.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButtonMasculino
             // 
@@ -269,7 +269,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxTelefone);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxGenero);
             this.Controls.Add(this.Genero);
             this.Controls.Add(this.Nascimento);
             this.Controls.Add(this.Sobrenome);
@@ -279,8 +279,8 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormInserirEstudante";
             this.Text = "FormInserirEstudante";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxGenero.ResumeLayout(false);
+            this.groupBoxGenero.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -296,8 +296,8 @@
         private System.Windows.Forms.Label Sobrenome;
         private System.Windows.Forms.Label Nascimento;
         private System.Windows.Forms.Label Genero;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.GroupBox groupBoxGenero;
+        private System.Windows.Forms.RadioButton radioButtonPrefiroNaoDizer;
         private System.Windows.Forms.RadioButton radioButtonMasculino;
         private System.Windows.Forms.RadioButton radioButtonFeminino;
         private System.Windows.Forms.Label label1;

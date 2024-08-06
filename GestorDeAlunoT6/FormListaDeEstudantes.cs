@@ -44,6 +44,18 @@ namespace GestorDeAlunoT6
         {
             FormAtualizarApagarAlunos formAtualizarApagarAlunos = new FormAtualizarApagarAlunos();
             formAtualizarApagarAlunos.textBoxID.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[0].Value.ToString();
+            formAtualizarApagarAlunos.textBoxNome.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[1].Value.ToString();
+            formAtualizarApagarAlunos.textBoxSobrenome.Text = dataGridViewListaDeEstudantes.CurrentRow.Cells[2].Value.ToString();
+            formAtualizarApagarAlunos.dateTimeNascimento.Value = (DateTime) dataGridViewListaDeEstudantes.CurrentRow.Cells[3].Value;
+            if (dataGridViewListaDeEstudantes.CurrentRow.Cells[4].Value.ToString() == "Feminino")
+            {
+                formAtualizarApagarAlunos.radioButtonFeminino.Checked = true;
+            }
+            else
+            {
+                formAtualizarApagarAlunos.radioButtonMasculino.Checked = true;
+            }
+
 
             formAtualizarApagarAlunos.Show();
         }
