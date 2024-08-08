@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarApagarAlunos));
             this.buttonApagar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.buttonAtualizar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.textBoxEndereço = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,17 +79,17 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buttonAtualizar
+            // buttonSalvar
             // 
-            this.buttonAtualizar.BackColor = System.Drawing.Color.LightCyan;
-            this.buttonAtualizar.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.buttonAtualizar.Location = new System.Drawing.Point(21, 407);
-            this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(83, 27);
-            this.buttonAtualizar.TabIndex = 31;
-            this.buttonAtualizar.Text = "Atualizar";
-            this.buttonAtualizar.UseVisualStyleBackColor = false;
-            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
+            this.buttonSalvar.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonSalvar.Font = new System.Drawing.Font("PanRoman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.buttonSalvar.Location = new System.Drawing.Point(21, 407);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(83, 27);
+            this.buttonSalvar.TabIndex = 31;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonAtualizar_Click);
             // 
             // pictureBoxFoto
             // 
@@ -281,7 +281,7 @@
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonAtualizar);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.textBoxEndereço);
             this.Controls.Add(this.label2);
@@ -310,7 +310,7 @@
 
         private System.Windows.Forms.Button buttonApagar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonAtualizar;
+        private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
