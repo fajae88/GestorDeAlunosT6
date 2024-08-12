@@ -14,6 +14,9 @@ namespace GestorDeAlunoT6
 {
     public partial class FormAtualizarApagarAlunos : Form
     {
+
+        Estudante estudante = new Estudante();
+
         public FormAtualizarApagarAlunos()
         {
             InitializeComponent();
@@ -62,15 +65,15 @@ namespace GestorDeAlunoT6
                 pictureBoxFoto.Image.Save(foto,
                     pictureBoxFoto.Image.RawFormat);
 
-                if (estudante.inserirEstudantes(nome, sobrenome, nascimento,
+                if (estudante.atualizarEstudante(id, nome, sobrenome, nascimento,
                     telefone, genero, endereco, foto))
                 {
-                    MessageBox.Show("Novo aluno cadastrado!", "Sucesso!",
+                    MessageBox.Show("Dados alterados!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!", "Falha!",
+                    MessageBox.Show("Dados não alterados!", "Falha!",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
@@ -83,7 +86,26 @@ namespace GestorDeAlunoT6
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            
+            int id = Convert.ToInt32(textBoxID.Text);
+            if (MessageBox.Show("Tem certeza que deseja apagar esse aluno?", "Apagar aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (estudante.apagarEstudante(id))
+                {
+                    MessageBox.Show("Estudante removido!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBoxID.Text = "";
+                    textBoxNome.Text = "";
+                    textBoxSobrenome.Text = "";
+                    textBoxTelefone.Text = "";
+                    textBoxEndereço.Text = "";
+                    dateTimeNascimento.Value = DateTime.Now;
+                    pictureBoxFoto.Image = null;
+                }
+                else
+                {
+                    MessageBox.Show("Estudante não removido!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
