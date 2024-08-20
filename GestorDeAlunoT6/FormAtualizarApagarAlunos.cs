@@ -30,83 +30,98 @@ namespace GestorDeAlunoT6
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-            // Cria um estudante.
-            Estudante estudante = new Estudante();
-            // Variáveis auxiliares.
-            int id = Convert.ToInt32(textBoxID.Text);
-            string nome = textBoxNome.Text;
-            string sobrenome = textBoxSobrenome.Text;
-            DateTime nascimento = dateTimeNascimento.Value;
-            string telefone = textBoxTelefone.Text;
-            string endereco = textBoxEndereço.Text;
-            string genero = "Feminino";
 
-            // Verifica se outro gênero está selecionado.
-            if (radioButtonMasculino.Checked)
+            try
             {
-                genero = "Masculino";
-            }
+                // Cria um estudante.
+                Estudante estudante = new Estudante();
+                // Variáveis auxiliares.
+                int id = Convert.ToInt32(textBoxID.Text);
+                string nome = textBoxNome.Text;
+                string sobrenome = textBoxSobrenome.Text;
+                DateTime nascimento = dateTimeNascimento.Value;
+                string telefone = textBoxTelefone.Text;
+                string endereco = textBoxEndereço.Text;
+                string genero = "Feminino";
 
-            MemoryStream foto = new MemoryStream();
-
-            // Precisamos verificar se o estudante tem
-            // mais de 10 anos e menos de 100.
-            int anoDeNascimento = dateTimeNascimento.Value.Year;
-            int anoAtual = DateTime.Now.Year;
-
-            if (((anoAtual - anoDeNascimento) < 10) ||
-                ((anoAtual - anoDeNascimento) > 100))
-            {
-                MessageBox.Show("Precisa ter entre 10 e 100 anos.",
-                    "Idade Inválida", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else if (Verificar())
-            {
-                pictureBoxFoto.Image.Save(foto,
-                    pictureBoxFoto.Image.RawFormat);
-
-                if (estudante.atualizarEstudante(id, nome, sobrenome, nascimento,
-                    telefone, genero, endereco, foto))
+                // Verifica se outro gênero está selecionado.
+                if (radioButtonMasculino.Checked)
                 {
-                    MessageBox.Show("Dados alterados!", "Sucesso!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    genero = "Masculino";
+                }
+
+                MemoryStream foto = new MemoryStream();
+
+                // Precisamos verificar se o estudante tem
+                // mais de 10 anos e menos de 100.
+                int anoDeNascimento = dateTimeNascimento.Value.Year;
+                int anoAtual = DateTime.Now.Year;
+
+                if (((anoAtual - anoDeNascimento) < 10) ||
+                    ((anoAtual - anoDeNascimento) > 100))
+                {
+                    MessageBox.Show("Precisa ter entre 10 e 100 anos.",
+                        "Idade Inválida", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else if (Verificar())
+                {
+                    pictureBoxFoto.Image.Save(foto,
+                        pictureBoxFoto.Image.RawFormat);
+
+                    if (estudante.atualizarEstudante(id, nome, sobrenome, nascimento,
+                        telefone, genero, endereco, foto))
+                    {
+                        MessageBox.Show("Dados alterados!", "Sucesso!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados não alterados!", "Falha!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Dados não alterados!", "Falha!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Campos não preenchidos!", "Erro!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Campos não preenchidos!", "Erro!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
+           
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(textBoxID.Text);
-            if (MessageBox.Show("Tem certeza que deseja apagar esse aluno?", "Apagar aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                if (estudante.apagarEstudante(id))
+                int id = Convert.ToInt32(textBoxID.Text);
+                if (MessageBox.Show("Tem certeza que deseja apagar esse aluno?", "Apagar aluno", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Estudante removido!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    textBoxID.Text = "";
-                    textBoxNome.Text = "";
-                    textBoxSobrenome.Text = "";
-                    textBoxTelefone.Text = "";
-                    textBoxEndereço.Text = "";
-                    dateTimeNascimento.Value = DateTime.Now;
-                    pictureBoxFoto.Image = null;
-                }
-                else
-                {
-                    MessageBox.Show("Estudante não removido!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (estudante.apagarEstudante(id))
+                    {
+                        MessageBox.Show("Estudante removido!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBoxID.Text = "";
+                        textBoxNome.Text = "";
+                        textBoxSobrenome.Text = "";
+                        textBoxTelefone.Text = "";
+                        textBoxEndereço.Text = "";
+                        dateTimeNascimento.Value = DateTime.Now;
+                        pictureBoxFoto.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Estudante não removido!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+            catch
+            {
 
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -119,11 +134,6 @@ namespace GestorDeAlunoT6
             {
                 pictureBoxFoto.Image = Image.FromFile(selecionarImagem.FileName);
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
         bool Verificar()
         {
@@ -143,35 +153,55 @@ namespace GestorDeAlunoT6
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(textBoxID.Text);  
-            MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
-            MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=", meuBancoDeDados.getConexao);
-
-            DataTable tabela = estudante.getEstudantes(comando);
-
-            if (tabela.Rows.Count > 0)
+            try
             {
-                textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
-                textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
-                textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
-                textBoxEndereço.Text = tabela.Rows[0]["endereco"].ToString();
+                int id = Convert.ToInt32(textBoxID.Text);
+                MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
-                dateTimeNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
+                MySqlCommand comando = new MySqlCommand("SELECT `id`, `nome`, `sobrenome`, `genero`, `telefone`, `endereco`, `foto` FROM `estudantes` WHERE `id`=", meuBancoDeDados.getConexao);
 
-                if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                DataTable tabela = estudante.getEstudantes(comando);
+
+                if (tabela.Rows.Count > 0)
                 {
-                    radioButtonFeminino.Checked = true;
-                }
-                else
-                {
-                    radioButtonMasculino.Checked = true;
-                }
+                    textBoxNome.Text = tabela.Rows[0]["nome"].ToString();
+                    textBoxSobrenome.Text = tabela.Rows[0]["sobrenome"].ToString();
+                    textBoxTelefone.Text = tabela.Rows[0]["telefone"].ToString();
+                    textBoxEndereço.Text = tabela.Rows[0]["endereco"].ToString();
 
-                byte[] imagem = (byte[])tabela.Rows[0]["foto"];
-                MemoryStream fotoDoAluno = new MemoryStream(imagem);
-                pictureBoxFoto.Image = Image.FromStream(fotoDoAluno);
+                    dateTimeNascimento.Value = (DateTime)tabela.Rows[0]["nascimento"];
 
+                    if (tabela.Rows[0]["genero"].ToString() == "Feminino")
+                    {
+                        radioButtonFeminino.Checked = true;
+                    }
+                    else
+                    {
+                        radioButtonMasculino.Checked = true;
+                    }
+
+                    byte[] imagem = (byte[])tabela.Rows[0]["foto"];
+                    MemoryStream fotoDoAluno = new MemoryStream(imagem);
+                    pictureBoxFoto.Image = Image.FromStream(fotoDoAluno);
+
+                }
+            } catch
+            {
+                MessageBox.Show("Insira uma ID válida.", "ID Inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+        }
+
+        private void textBox1_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBoxID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

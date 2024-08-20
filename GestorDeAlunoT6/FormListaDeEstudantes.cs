@@ -70,7 +70,15 @@ namespace GestorDeAlunoT6
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-
+            // Preencha a tabela com as informações do banco de dados:
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`");
+            dataGridViewListaDeEstudantes.ReadOnly = true;
+            DataGridViewImageColumn colunaDeFotos = new DataGridViewImageColumn();
+            dataGridViewListaDeEstudantes.RowTemplate.Height = 80;
+            dataGridViewListaDeEstudantes.DataSource = estudante.getEstudantes(comando);
+            colunaDeFotos = (DataGridViewImageColumn)dataGridViewListaDeEstudantes.Columns[7];
+            colunaDeFotos.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewListaDeEstudantes.AllowUserToAddRows = false;
         }
     }
 }
